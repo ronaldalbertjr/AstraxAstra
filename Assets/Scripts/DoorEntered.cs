@@ -1,26 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DoorEntered : MonoBehaviour 
 {
-    void Start()
+    public Image transitionImage;
+    bool transiting = false;
+    public string sceneTo;
+    public Vector3 positionTo;
+    float alpha;
+    GameObject player;
+    GameObject cam;
+    void Awake()
     {
-
+        alpha = 0;
     }
 	void Update () 
     {
-        	
+        if(transiting)
+        {
+            alpha += 0.01f;
+            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+            if(alpha >= 1)
+            {
+                transiting = false;
+            }
+        }
+        else if(!transiting && alpha > 0)
+        {
+            player.transform.position = positionTo;
+            alpha -= 0.01f;
+            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+        }
 	}
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("oi");
     }
     void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("collision");
         if(col.tag == "Player" && Input.GetKey(KeyCode.KeypadEnter))
         {
-            col.transform.position = new Vector3(0f, 0f, 0f);
+            transiting = true;
+            player = col.gameObject;
+            cam.GetComponent<CameraFollow>().sceneIn = sceneTo;
         }
     }
 }

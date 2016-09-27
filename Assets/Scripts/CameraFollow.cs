@@ -6,14 +6,24 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
     public Transform playerPosition;
     public GameObject[] camPos;
+    public string sceneIn;
     GameObject[] borders =  new GameObject[2];
 
 	void Start ()
     {
-        borders = GameObject.FindGameObjectsWithTag("Border");
+        sceneIn = "Quarto";
 	}
 	void Update () 
     {
+        switch(sceneIn)
+        {
+            case "Quarto":
+                borders = GameObject.FindGameObjectsWithTag("Border/Quarto");
+                break;
+            case "Sala":
+                borders = GameObject.FindGameObjectsWithTag("Border/Sala");
+                break;
+        }
         if (playerPosition.position.x > borders[1].transform.position.x && playerPosition.position.x < borders[0].transform.position.x)
         {
             this.transform.position = new Vector3(playerPosition.position.x + offset.x, 0f, -14f);
