@@ -13,6 +13,7 @@ public class DoorEntered : MonoBehaviour
     GameObject cam;
     void Awake()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
         alpha = 0;
     }
 	void Update () 
@@ -33,12 +34,9 @@ public class DoorEntered : MonoBehaviour
             transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
         }
 	}
-    void OnTriggerEnter2D(Collider2D col)
-    {
-    }
     void OnTriggerStay2D(Collider2D col)
     {
-        if(col.tag == "Player" && Input.GetKey(KeyCode.KeypadEnter))
+        if(col.tag == "Player" && Input.GetKey(KeyCode.Return))
         {
             transiting = true;
             player = col.gameObject;
