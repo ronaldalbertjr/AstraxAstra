@@ -5,9 +5,11 @@ public class CameraFollow : MonoBehaviour
 {
     public Vector3 offset;
     public Transform playerPosition;
-    public GameObject[] camPos;
     public string sceneIn;
-    GameObject[] borders =  new GameObject[2];
+    [SerializeField]
+    public GameObject[] borders =  new GameObject[2];
+    [SerializeField]
+    public  GameObject[] camPos;
 
 	void Start ()
     {
@@ -19,9 +21,11 @@ public class CameraFollow : MonoBehaviour
         {
             case "Quarto":
                 borders = GameObject.FindGameObjectsWithTag("Border/Quarto");
+                camPos = GameObject.FindGameObjectsWithTag("camPos/Quarto");
                 break;
             case "Sala":
                 borders = GameObject.FindGameObjectsWithTag("Border/Sala");
+                camPos = GameObject.FindGameObjectsWithTag("camPos/Sala");
                 break;
         }
         if (playerPosition.position.x > borders[1].transform.position.x && playerPosition.position.x < borders[0].transform.position.x)
@@ -32,7 +36,7 @@ public class CameraFollow : MonoBehaviour
         {
             this.transform.position =  new Vector3(camPos[0].transform.position.x, 0f, -14f);
         }
-        else if (playerPosition.position.x > borders[0].transform.position.x)
+        else if (playerPosition.position.x > borders[0].transform.position.x + offset.x)
         {
             this.transform.position = new Vector3(camPos[1].transform.position.x, 0f, -14f);
         }

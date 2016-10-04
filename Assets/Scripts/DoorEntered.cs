@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class DoorEntered : MonoBehaviour 
 {
@@ -38,6 +39,8 @@ public class DoorEntered : MonoBehaviour
     {
         if(col.tag == "Player" && Input.GetKey(KeyCode.Return))
         {
+            Array.Clear(cam.GetComponent<CameraFollow>().camPos, 0, cam.GetComponent<CameraFollow>().camPos.Length);
+            Array.Clear(cam.GetComponent<CameraFollow>().camPos, 0, cam.GetComponent<CameraFollow>().borders.Length);
             transiting = true;
             player = col.gameObject;
             cam.GetComponent<CameraFollow>().sceneIn = sceneTo;
