@@ -21,29 +21,37 @@ public class DoorEntered : MonoBehaviour
     {
         if(transiting)
         {
-            alpha += 0.01f;
-            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
-            if(alpha >= 1)
-            {
-                transiting = false;
-            }
+            FadeIn();   
         }
         else if(!transiting && alpha > 0)
         {
-            player.transform.position = positionTo;
-            alpha -= 0.01f;
-            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+            FadeOut();
         }
 	}
     void OnTriggerStay2D(Collider2D col)
     {
         if(col.tag == "Player" && Input.GetKey(KeyCode.Return))
         {
-            Array.Clear(cam.GetComponent<CameraFollow>().camPos, 0, cam.GetComponent<CameraFollow>().camPos.Length);
-            Array.Clear(cam.GetComponent<CameraFollow>().camPos, 0, cam.GetComponent<CameraFollow>().borders.Length);
             transiting = true;
             player = col.gameObject;
             cam.GetComponent<CameraFollow>().sceneIn = sceneTo;
         }
+    }
+    void FadeIn()
+    {
+        alpha += 0.01f;
+        transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+        if (alpha >= 1)
+        {
+            transiting = false;
+        }
+    }
+    void FadeOut()
+    {
+        cam.GetComponent<CameraFollow>().OnDoorEnter();
+        cam.GetComponent<CameraFollow>().offset.y = player.transform.position.y;
+        player.transform.position = positionTo;
+        alpha -= 0.01f;
+        transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
     }
 }
