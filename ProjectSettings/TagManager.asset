@@ -8,6 +8,8 @@ TagManager:
   - Border/Sala
   - camPos/Quarto
   - camPos/Sala
+  - camPos/Corredor
+  - Border/Corredor
   layers:
   - Default
   - TransparentFX

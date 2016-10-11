@@ -6,11 +6,11 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
     public Transform playerPosition;
     public string sceneIn;
-    [SerializeField]
+    [HideInInspector]
     public GameObject[] borders =  new GameObject[2];
-    [SerializeField]
+    [HideInInspector]
     public  GameObject[] camPos;
-    [SerializeField]
+    [HideInInspector]
     public bool onDoorEnter;
 
 	void Start ()
@@ -21,7 +21,6 @@ public class CameraFollow : MonoBehaviour
 	}
 	void Update () 
     {
-        Debug.Log(borders[0].tag);
         UpdateCamPos();
    	}
 
@@ -33,12 +32,17 @@ public class CameraFollow : MonoBehaviour
                 borders = GameObject.FindGameObjectsWithTag("Border/Quarto");
                 camPos = GameObject.FindGameObjectsWithTag("camPos/Quarto");
                 break;
+            case "Corredor":
+                borders = GameObject.FindGameObjectsWithTag("Border/Corredor");
+                camPos = GameObject.FindGameObjectsWithTag("camPos/Corredor");
+                break;
             case "Sala":
                 borders = GameObject.FindGameObjectsWithTag("Border/Sala");
                 camPos = GameObject.FindGameObjectsWithTag("camPos/Sala");
                 break;
         }
     }
+
     void UpdateCamPos()
     {
         if (playerPosition.position.x > borders[1].transform.position.x && playerPosition.position.x < borders[0].transform.position.x)
@@ -49,7 +53,7 @@ public class CameraFollow : MonoBehaviour
         {
             this.transform.position = new Vector3(camPos[0].transform.position.x, offset.y, -14f);
         }
-        else if (playerPosition.position.x > borders[0].transform.position.x + offset.x)
+        else if (playerPosition.position.x > borders[0].transform.position.x)
         {
             this.transform.position = new Vector3(camPos[1].transform.position.x, offset.y, -14f);
         }
