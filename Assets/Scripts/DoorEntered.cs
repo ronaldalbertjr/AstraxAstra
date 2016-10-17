@@ -50,6 +50,10 @@ public class DoorEntered : MonoBehaviour
     {
         cam.GetComponent<CameraFollow>().OnDoorEnter();
         cam.GetComponent<CameraFollow>().offset.y = player.transform.position.y;
+		if (sceneTo == "Cozinha") 
+		{
+			cam.GetComponent<CameraFollow>().offset.y = -20.84f;
+		}
         player.transform.position = positionTo;
         alpha -= 0.01f;
         transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);

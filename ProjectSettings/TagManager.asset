@@ -10,6 +10,8 @@ TagManager:
   - camPos/Sala
   - camPos/Corredor
   - Border/Corredor
+  - Border/Cozinha
+  - camPos/Cozinha
   layers:
   - Default
   - TransparentFX

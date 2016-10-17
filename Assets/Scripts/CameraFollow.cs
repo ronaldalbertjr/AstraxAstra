@@ -40,6 +40,10 @@ public class CameraFollow : MonoBehaviour
                 borders = GameObject.FindGameObjectsWithTag("Border/Sala");
                 camPos = GameObject.FindGameObjectsWithTag("camPos/Sala");
                 break;
+			case "Cozinha":
+				borders = GameObject.FindGameObjectsWithTag("Border/Cozinha");
+				camPos = GameObject.FindGameObjectsWithTag("camPos/Cozinha");
+				break;
         }
     }
 
