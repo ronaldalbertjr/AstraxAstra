@@ -52,7 +52,7 @@ public class DoorEntered : MonoBehaviour
         cam.GetComponent<CameraFollow>().offset.y = player.transform.position.y;
 		if (sceneTo == "Cozinha") 
 		{
-			cam.GetComponent<CameraFollow>().offset.y = -20.84f;
+			cam.GetComponent<CameraFollow>().offset.y = -20.4f;
 		}
         player.transform.position = positionTo;
         alpha -= 0.01f;
