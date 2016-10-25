@@ -282,6 +282,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327948560}
   m_RootOrder: 1
+--- !u!1 &212065076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 212065077}
+  m_Layer: 0
+  m_Name: AudioSources
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &212065077
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 212065076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1120873643}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &212904432
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +453,7 @@ GameObject:
   - 50: {fileID: 288142184}
   - 114: {fileID: 288142187}
   - 61: {fileID: 288142183}
+  - 95: {fileID: 288142188}
   m_Layer: 0
   m_Name: Astra
   m_TagString: Player
@@ -442,9 +471,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -.0326543525}
   serializedVersion: 2
-  m_Size: {x: 5.94999933, y: 27.8899994}
+  m_Size: {x: 1.74000001, y: 5.49469042}
 --- !u!50 &288142184
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -484,7 +513,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5e076aba0a557b14b919fb1e730fc04f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 24452691b4df3bb4f9eb5e7db1849c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &288142186
 Transform:
@@ -493,8 +522,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 288142182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.29999995, y: -.300000012, z: 0}
-  m_LocalScale: {x: .212151796, y: .212151796, z: .212151796}
+  m_LocalPosition: {x: -1.60000002, y: -.200000003, z: 0}
+  m_LocalScale: {x: 1.18811071, y: 1.18811071, z: 1.18811071}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -510,6 +539,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!95 &288142188
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 288142182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5238b244c665a0e48ac46aedaae434de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &302183104
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,8 +912,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -28.9941139, y: 8.32940102}
-  - {x: 29.3171978, y: 8.21735954}
+  - {x: -28.6279411, y: 11.6249094}
+  - {x: 29.3171959, y: 11.512866}
 --- !u!68 &936725149
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1076,8 +1122,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 212065077}
+  m_RootOrder: 0
 --- !u!1 &1132734770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,8 +1222,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -26.7314301, y: 3.49870753}
-  - {x: 27.2342358, y: 3.4454937}
+  - {x: -26.7314301, y: 5.22804403}
+  - {x: 27.2342358, y: 4.82896852}
 --- !u!68 &1172733426
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1684,8 +1730,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Points:
   - {x: -28.2920265, y: 8.04288673}
-  - {x: -28.5834427, y: 9.04699898}
-  - {x: 28.3653622, y: 8.95679379}
+  - {x: -29.315546, y: 12.3414698}
+  - {x: 28.3653622, y: 12.617321}
 --- !u!68 &1539095119
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1723,9 +1769,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -8.92126656, y: 4.52974463}
+  m_Offset: {x: -8.92126656, y: 6.72605085}
   serializedVersion: 2
-  m_Size: {x: 17.5562572, y: 2.81533504}
+  m_Size: {x: 17.5562572, y: 2.81533647}
 --- !u!68 &1539095122
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2129,8 +2175,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -18.2144375, y: 2.23087406}
-  - {x: 15.5583658, y: 2.35071874}
+  - {x: -18.2144394, y: 3.38568449}
+  - {x: 15.7508354, y: 3.31306243}
 --- !u!68 &2054358195
 EdgeCollider2D:
   m_ObjectHideFlags: 0
