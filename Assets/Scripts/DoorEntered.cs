@@ -5,6 +5,8 @@ using System;
 
 public class DoorEntered : MonoBehaviour 
 {
+    [SerializeField]
+    AudioSource doorOpen;
     public Image transitionImage;
     bool transiting = false;
     public string sceneTo;
@@ -35,6 +37,7 @@ public class DoorEntered : MonoBehaviour
             transiting = true;
             player = col.gameObject;
             cam.GetComponent<CameraFollow>().sceneIn = sceneTo;
+            StartCoroutine(playDoorSound());
         }
     }
     void FadeIn()
@@ -57,5 +60,14 @@ public class DoorEntered : MonoBehaviour
         player.transform.position = positionTo;
         alpha -= 0.01f;
         transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+    }
+    IEnumerator playDoorSound()
+    {
+        if (doorOpen != null)
+        {
+            doorOpen.Play();
+            yield return new WaitForSeconds(3);
+            doorOpen.Stop();
+        }
     }
 }

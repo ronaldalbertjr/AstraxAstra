@@ -3,9 +3,10 @@ using System.Collections;
 
 public class AstraBehaviour : MonoBehaviour 
 {
+    [SerializeField]
+    float speed;
     float w;
     float h;
-	[SerializeField] float speed;
     bool faceRight;
     bool walkController;
     Animator anim;
@@ -17,12 +18,12 @@ public class AstraBehaviour : MonoBehaviour
     }
     void FixedUpdate()
     {
+        CheckWalkAnimation();
+
         w = Input.GetAxis("Horizontal");
         h = Input.GetAxis("Vertical");
 
         rb.velocity = new Vector2(w * speed, h * speed);
-
-        CheckWalkAnimation();
 
         if (w < 0 && !faceRight) Flip();
         else if (w > 0 && faceRight) Flip();

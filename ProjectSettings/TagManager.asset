@@ -12,6 +12,7 @@ TagManager:
   - Border/Corredor
   - Border/Cozinha
   - camPos/Cozinha
+  - doorSound
   layers:
   - Default
   - TransparentFX
