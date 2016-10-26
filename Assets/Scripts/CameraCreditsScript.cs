@@ -100,6 +100,6 @@ public class CameraCreditsScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        Application.LoadLevel("NAVEIntroScene");
+        Application.LoadLevel("menu");
     }
 }

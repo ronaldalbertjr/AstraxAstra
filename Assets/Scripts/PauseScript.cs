@@ -24,7 +24,7 @@ public class PauseScript : MonoBehaviour
 
     public void OnReturnToMenuClick()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel("menu");
     }
     public void OnExitClick()
     {

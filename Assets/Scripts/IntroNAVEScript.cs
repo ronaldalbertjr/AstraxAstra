@@ -40,6 +40,6 @@ public class IntroNAVEScript : MonoBehaviour
     }
     void LoadGame()
     {
-        Application.LoadLevel("casa");
+        Application.LoadLevel("menu");
     }
 }
