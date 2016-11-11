@@ -10,11 +10,17 @@ public class MenuScript : MonoBehaviour
     bool keyPressed = false;
 	void Update ()
     {
-        if(Input.anyKey && !keyPressed)
+        if(Input.GetKey(KeyCode.Escape) && !keyPressed)
+        {
+            keyPressed = true;
+            StartCoroutine("menuEnumeratorCredits");
+        }
+        else if(Input.anyKey && !keyPressed)
         {
             keyPressed = true;
             StartCoroutine("menuEnumerator");
         }
+
 	
 	}
 
@@ -27,6 +33,17 @@ public class MenuScript : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         Application.LoadLevel("casa");
+
+    }
+    IEnumerator menuEnumeratorCredits()
+    {
+        while (alpha < 1)
+        {
+            alpha += 0.01f;
+            transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
+            yield return new WaitForSeconds(0.01f);
+        }
+        Application.LoadLevel("credits");
 
     }
 }

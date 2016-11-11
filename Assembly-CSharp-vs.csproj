@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AstraBehaviour.cs" />
      <Compile Include="Assets\Scripts\CameraCreditsScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\DespertadorScript.cs" />
      <Compile Include="Assets\Scripts\DoorEntered.cs" />
      <Compile Include="Assets\Scripts\IntroNAVEScript.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
