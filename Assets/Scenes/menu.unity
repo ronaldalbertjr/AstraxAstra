@@ -97,7 +97,7 @@ GameObject:
   - 224: {fileID: 553964073}
   - 222: {fileID: 553964075}
   - 114: {fileID: 553964074}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ComecaroJogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - 224: {fileID: 600792094}
   - 222: {fileID: 600792096}
   - 114: {fileID: 600792095}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - 114: {fileID: 837542131}
   - 114: {fileID: 837542130}
   - 114: {fileID: 837542133}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +480,7 @@ GameObject:
   - 224: {fileID: 1035736188}
   - 222: {fileID: 1035736187}
   - 114: {fileID: 1035736186}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: AstraxAstra
   m_TagString: Untagged
   m_Icon: {fileID: 0}

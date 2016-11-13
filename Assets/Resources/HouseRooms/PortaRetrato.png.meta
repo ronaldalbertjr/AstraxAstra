@@ -1,9 +1,11 @@
 fileFormatVersion: 2
 guid: 7556fc28d56971443af73e9bc148e873
-timeCreated: 1477414729
+timeCreated: 1478905887
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: PortaRetrato_0
+    21300002: PortaRetrato_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,7 +39,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +50,27 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: PortaRetrato_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 70
+        width: 1358
+        height: 925
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: PortaRetrato_1
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 0
+        width: 1354
+        height: 997
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
