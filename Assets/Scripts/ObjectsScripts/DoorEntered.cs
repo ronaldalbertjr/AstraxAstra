@@ -42,7 +42,7 @@ public class DoorEntered : MonoBehaviour
     }
     void FadeIn()
     {
-        alpha += 0.01f;
+        alpha += 0.03f;
         transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
         if (alpha >= 1)
         {
@@ -58,7 +58,7 @@ public class DoorEntered : MonoBehaviour
 			cam.GetComponent<CameraFollow>().offset.y = -20.4f;
 		}
         player.transform.position = positionTo;
-        alpha -= 0.01f;
+        alpha -= 0.03f;
         transitionImage.color = new Color(transitionImage.color.r, transitionImage.color.g, transitionImage.color.b, alpha);
     }
     IEnumerator playDoorSound()

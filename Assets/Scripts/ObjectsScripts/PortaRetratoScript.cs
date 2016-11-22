@@ -5,6 +5,8 @@ public class PortaRetratoScript : MonoBehaviour
 {
     [SerializeField]
     Sprite sp;
+    [SerializeField]
+    GameObject foto;
 	void Start ()
     {
         Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
@@ -18,6 +20,8 @@ public class PortaRetratoScript : MonoBehaviour
             if(hit.collider.gameObject == this.gameObject)
             {
                 this.gameObject.GetComponent<SpriteRenderer>().sprite = sp;
+                foto.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
+                foto.GetComponent<Image2PickScript>().canBePicked = true;
             }
         }
 	}

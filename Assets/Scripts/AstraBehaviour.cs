@@ -14,7 +14,7 @@ public class AstraBehaviour : MonoBehaviour
     void Awake()
     {
         Physics2D.IgnoreCollision(GameObject.Find("prateleira").GetComponent<BoxCollider2D>(), this.GetComponent<BoxCollider2D>());
-        Physics2D.IgnoreCollision(GameObject.Find("foto").GetComponent<BoxCollider2D>(), this.GetComponent<BoxCollider2D>());
+        Physics2D.IgnoreCollision(GameObject.Find("fotoQuarto").GetComponent<BoxCollider2D>(), this.GetComponent<BoxCollider2D>());
         Physics2D.IgnoreCollision(GameObject.Find("pictureCollider").GetComponent<EdgeCollider2D>(), this.GetComponent<BoxCollider2D>());
         rb = this.GetComponent<Rigidbody2D>();
         anim = this.GetComponent<Animator>();
